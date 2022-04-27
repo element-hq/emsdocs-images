@@ -1,3 +1,7 @@
+:root {
+    --color-element-green: #0dbd8b;
+}
+
 .content-wrap img {
     max-height: 350px;
     max-width: 450px;
@@ -9,7 +13,7 @@
 .content-wrap a:active,
 .content-wrap a:hover
 {
-    color: #0dbd8b;
+    color: var(--color-element-green);
 }
 
 .content-wrap a:link,
@@ -20,5 +24,5 @@
 }
 
 .content-wrap a:hover {
-    text-decoration: underline #0dbd8b !important;
+    text-decoration: underline var(--color-element-green) !important;
 }
