@@ -1,0 +1,6 @@
+img {
+    max-height: 350px;
+    max-width: 450px;
+    border: 1px solid var(--fg);
+}
+
