@@ -4,10 +4,15 @@ img {
     border: 1px solid var(--fg);
 }
 
-a:link {
-    text-decoration:underline;
+a:link,
+a:visited,
+a:active,
+a:hover
+{
+    color: #0dbd8b;
+    text-decoration:none;
 }
 
-a.no-link-style {
+a.hover {
     text-decoration:underline;
 }
