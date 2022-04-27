@@ -4,10 +4,10 @@ img {
     border: 1px solid var(--fg);
 }
 
-a:hover {
+a:link {
     text-decoration:underline;
 }
 
-a.no-link-style:hover {
+a.no-link-style {
     text-decoration:underline;
 }
