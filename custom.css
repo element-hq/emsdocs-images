@@ -8,3 +8,6 @@ a:hover {
     text-decoration:underline;
 }
 
+a.no-link-style:hover {
+    text-decoration:underline;
+}
