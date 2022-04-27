@@ -4,3 +4,7 @@ img {
     border: 1px solid var(--fg);
 }
 
+a:hover {
+    text-decoration:underline;
+}
+
