@@ -1,18 +1,24 @@
-img {
+.content-wrap img {
     max-height: 350px;
     max-width: 450px;
-    border: 1px solid var(--fg);
+    border: 1px solid var(--color-primary);
 }
 
-a:link,
-a:visited,
-a:active,
-a:hover
+.content-wrap a:link,
+.content-wrap a:visited,
+.content-wrap a:active,
+.content-wrap a:hover
 {
     color: #0dbd8b;
-    text-decoration:none;
 }
 
-a.hover {
-    text-decoration:underline;
+.content-wrap a:link,
+.content-wrap a:visited,
+.content-wrap a:active
+{
+    text-decoration: none !important;
+}
+
+.content-wrap a:hover {
+    text-decoration: underline !imprtant;
 }
