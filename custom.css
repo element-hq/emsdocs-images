@@ -8,21 +8,15 @@
     border: 1px solid var(--color-primary);
 }
 
-.content-wrap a:link,
-.content-wrap a:visited,
-.content-wrap a:active,
-.content-wrap a:hover
+.content-wrap a,
+.markdown-editor-display a
 {
     color: var(--color-element-green);
+    text-decoration: none;
 }
 
-.content-wrap a:link,
-.content-wrap a:visited,
-.content-wrap a:active
+.content-wrap a:hover,
+.markdown-editor-display a:hover
 {
-    text-decoration: none !important;
-}
-
-.content-wrap a:hover {
     text-decoration: underline var(--color-element-green) !important;
 }
