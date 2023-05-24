@@ -18,13 +18,14 @@
 .content-wrap a,
 .markdown-editor-display a {
   color: var(--cpd-color-text-primary);
-  text-decoration: none;
+  text-decoration: underline;
+  border-radius: 9999px;
 }
 
 /* Add a underline when hovering the mouse over a link */
 .content-wrap a:hover,
 .markdown-editor-display a:hover {
-  text-decoration: underline var(--cpd-color-text-primary) !important;
+  background: var(--cpd-color-bg-action-secondary-hovered) !important;
 }
 
 /* Collapsible section headers, used for example on the FAQ page */
@@ -42,6 +43,11 @@
 
 html {
   background: var(--cpd-color-bg-canvas-default);
+}
+
+html,
+body {
+  font-size: 16px !important;
 }
 
 * {
@@ -72,6 +78,14 @@ html {
   color: var(--cpd-color-text-primary);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--cpd-color-text-primary) !important;
+}
+
 h1 {
   font: var(--cpd-font-heading-xl-semibold) !important;
 }
@@ -88,6 +102,10 @@ h4 {
   font: var(--cpd-font-heading-sm-semibold) !important;
 }
 
+h5 {
+  font: var(--cpd-font-body-md-semibold);
+}
+
 .entity-list-item > span:first-child,
 .icon-list-item > span:first-child,
 .split-icon-list-item > a > .icon,
@@ -100,6 +118,7 @@ header .links a {
   border-radius: 9999px;
   font: var(--cpd-font-body-md-medium);
   padding: var(--cpd-space-1x) var(--cpd-space-3x);
+  text-decoration: underline;
 }
 
 header .links a:hover {
@@ -123,4 +142,44 @@ header .search-box input {
 
 * {
   box-shadow: none !important;
+}
+
+.logo-text {
+  display: none;
+}
+
+body::after {
+  background: url(https://compound.element.io/globe.svg);
+  background-size: contain;
+  content: "";
+  display: block;
+  width: 512px;
+  filter: blur(512px);
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.25;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.entity-list-item,
+.icon-list-item {
+  font: var(--cpd-font-body-sm-regular);
+  padding: var(--cpd-space-1x) var(--cpd-space-2x);
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: var(--cpd-space-2x);
+}
+
+.tri-layout-left-contents,
+.tri-layout-right-contents {
+  padding: var(--cpd-space-5x) var(--cpd-space-5x) !important;
+}
+
+.entity-list-item:not(.no-hover):hover,
+.icon-list-item:not(.no-hover):hover {
+  border-radius: 12px;
 }
