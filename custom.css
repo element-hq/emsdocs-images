@@ -6,33 +6,25 @@
     not site navigation and stuff which is styled by Bookstack.
 */
 
-/* Set the color as a variable */
-:root {
-    --color-element-green: #0dbd8b;
-}
-
 /* Max size and a border around images */
 .content-wrap img,
-.markdown-editor-display img
-{
-    max-height: 350px;
-    max-width: 450px;
-    border: 1px solid var(--color-primary);
+.markdown-editor-display img {
+  max-height: 350px;
+  max-width: 450px;
+  border: 1px solid var(--color-primary);
 }
 
 /* Links */
 .content-wrap a,
-.markdown-editor-display a
-{
-    color: var(--color-element-green);
-    text-decoration: none;
+.markdown-editor-display a {
+  color: var(--cpd-color-text-primary);
+  text-decoration: none;
 }
 
 /* Add a underline when hovering the mouse over a link */
 .content-wrap a:hover,
-.markdown-editor-display a:hover
-{
-    text-decoration: underline var(--color-element-green) !important;
+.markdown-editor-display a:hover {
+  text-decoration: underline var(--cpd-color-text-primary) !important;
 }
 
 /* Collapsible section headers, used for example on the FAQ page */
@@ -40,4 +32,32 @@
 .markdown-editor-display details summary {
   font-size: 15px;
   font-weight: bolder;
+}
+
+/****************************/
+/****************************/
+/****************************/
+
+html {
+  background: var(--cpd-color-bg-canvas-default);
+}
+
+.content-wrap.card {
+  box-shadow: none;
+  border: 1px solid var(--cpd-color-bg-subtle-primary);
+  border-radius: 24px;
+  padding: var(--cpd-space-10x) var(--cpd-space-13x);
+}
+
+#header {
+  background: var(--cpd-color-bg-canvas-default);
+  border-bottom: 1px solid var(--cpd-color-bg-subtle-primary);
+}
+
+.header-links .svg-icon {
+  display: none;
+}
+
+.header-links a {
+  color: var(--cpd-color-text-primary);
 }
