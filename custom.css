@@ -38,8 +38,17 @@
 /****************************/
 /****************************/
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
 html {
   background: var(--cpd-color-bg-canvas-default);
+}
+
+* {
+  outline-color: var(--cpd-color-border-focused);
+  outline-offset: 1px;
+  font: var(--cpd-font-body-md-regular);
+  font-family: "Inter", sans-serif !important;
 }
 
 .content-wrap.card {
@@ -50,8 +59,9 @@ html {
 }
 
 #header {
-  background: var(--cpd-color-bg-canvas-default);
+  background: var(--cpd-color-bg-canvas-default) !important;
   border-bottom: 1px solid var(--cpd-color-bg-subtle-primary);
+  box-shadow: none;
 }
 
 .header-links .svg-icon {
@@ -60,4 +70,57 @@ html {
 
 .header-links a {
   color: var(--cpd-color-text-primary);
+}
+
+h1 {
+  font: var(--cpd-font-heading-xl-semibold) !important;
+}
+
+h2 {
+  font: var(--cpd-font-heading-lg-semibold) !important;
+}
+
+h3 {
+  font: var(--cpd-font-heading-md-semibold) !important;
+}
+
+h4 {
+  font: var(--cpd-font-heading-sm-semibold) !important;
+}
+
+.entity-list-item > span:first-child,
+.icon-list-item > span:first-child,
+.split-icon-list-item > a > .icon,
+.chapter-expansion > .icon {
+  display: none;
+}
+
+header .links a {
+  color: var(--cpd-color-text-primary) !important;
+  border-radius: 9999px;
+  font: var(--cpd-font-body-md-medium);
+  padding: var(--cpd-space-1x) var(--cpd-space-3x);
+}
+
+header .links a:hover {
+  background: var(--cpd-color-bg-action-secondary-hovered) !important;
+  text-decoration: underline;
+}
+
+header .search-box input {
+  background: none;
+  border: 1px solid var(--cpd-color-border-interactive-primary) !important;
+  color: var(--cpd-color-text-primary) !important;
+}
+
+::placeholder {
+  color: var(--cpd-color-text-placeholder) !important;
+}
+
+#header-search-box-button {
+  color: var(--cpd-color-icon-primary) !important;
+}
+
+* {
+  box-shadow: none !important;
 }
