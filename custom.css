@@ -68,6 +68,15 @@ body {
   background: var(--cpd-color-bg-canvas-default) !important;
   border-bottom: 1px solid var(--cpd-color-bg-subtle-primary);
   box-shadow: none;
+  z-index: -2;
+}
+
+body {
+  pointer-events: none;
+}
+
+body > * {
+  pointer-events: initial;
 }
 
 .header-links .svg-icon {
@@ -126,8 +135,9 @@ header .links a:hover {
   text-decoration: underline;
 }
 
-header .search-box input {
-  background: none;
+.search-box input {
+  background: none !important;
+  border-radius: 9999px;
   border: 1px solid var(--cpd-color-border-interactive-primary) !important;
   color: var(--cpd-color-text-primary) !important;
 }
@@ -144,8 +154,16 @@ header .search-box input {
   box-shadow: none !important;
 }
 
-.logo-text {
+.logo-image {
   display: none;
+}
+
+.logo-text {
+  font-size: 0;
+  height: 36px;
+  aspect-ratio: 7.3 / 1;
+  background: url(https://gsouquet.github.io/emsdocs-images/images/logo.png);
+  background-size: contain;
 }
 
 body::after {
@@ -162,7 +180,7 @@ body::after {
   opacity: 0.25;
   transform: translate(-50%, -50%);
   z-index: -1;
-  pointer-events: none;
+  pointer-events: none !important;
 }
 
 .entity-list-item,
@@ -171,7 +189,11 @@ body::after {
   padding: var(--cpd-space-1x) var(--cpd-space-2x);
   box-sizing: border-box;
   max-width: 100%;
-  margin-left: var(--cpd-space-2x);
+}
+
+.entity-list,
+.icon-list {
+  margin: calc(-1 * var(--cpd-space-2x));
 }
 
 .tri-layout-left-contents,
@@ -182,4 +204,13 @@ body::after {
 .entity-list-item:not(.no-hover):hover,
 .icon-list-item:not(.no-hover):hover {
   border-radius: 12px;
+}
+
+.activity-list-item {
+  font: var(--cpd-font-body-sm-regular) !important;
+}
+
+.activity-list-item a {
+  text-decoration: underline;
+  font-weight: var(--cpd-font-weight-medium);
 }
