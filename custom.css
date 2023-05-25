@@ -1,100 +1,14 @@
-/*
-    .content-wrap = the contents of pages
-    .markdown-editor-display = the preview pane when editing a page
-
-    These two ensure the formatting only applies to the page contents,
-    not site navigation and stuff which is styled by Bookstack.
-*/
-
-/* Max size and a border around images */
-.content-wrap img,
-.markdown-editor-display img {
-  max-height: 350px;
-  max-width: 450px;
-  border: 1px solid var(--color-primary);
-}
-
-/* Links */
-.content-wrap a,
-.markdown-editor-display a {
-  color: var(--cpd-color-text-primary);
-  border-radius: 24px;
-}
-
-/* Add a underline when hovering the mouse over a link */
-.content-wrap a:hover,
-.markdown-editor-display a:hover {
-  background: var(--cpd-color-bg-action-secondary-hovered) !important;
-}
-
-/* Collapsible section headers, used for example on the FAQ page */
-.content-wrap details summary,
-.markdown-editor-display details summary {
-  font-size: 15px;
-  font-weight: bolder;
-}
-
-/****************************/
-/****************************/
-/****************************/
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
-
 html {
   background: var(--cpd-color-bg-canvas-default);
 }
 
 html,
 body {
+  /* Base size used for all `rem` compound tokens */
   font-size: 16px !important;
 }
 
-* {
-  outline-color: var(--cpd-color-border-focused);
-  outline-offset: 1px;
-  font: var(--cpd-font-body-md-regular);
-  font-family: "Inter", sans-serif !important;
-}
-
-.entity-meta-item {
-  font: var(--cpd-font-body-sm-regular) !important;
-}
-
-.content-wrap.card {
-  box-shadow: none;
-  border: 1px solid var(--cpd-color-bg-subtle-primary);
-  border-radius: 24px;
-  padding: var(--cpd-space-10x) var(--cpd-space-13x);
-}
-
-#header {
-  background: var(--cpd-color-bg-canvas-default) !important;
-  border-bottom: 1px solid var(--cpd-color-bg-subtle-primary);
-  box-shadow: none;
-  z-index: -2;
-}
-
-body {
-  pointer-events: none;
-}
-
-body > * {
-  pointer-events: initial;
-}
-
-.header-links .svg-icon {
-  display: none;
-}
-
-.header-links a {
-  color: var(--cpd-color-text-primary);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
+:is(h1, h2, h3, h4, h5) {
   color: var(--cpd-color-text-primary) !important;
 }
 
@@ -118,6 +32,84 @@ h5 {
   font: var(--cpd-font-body-md-semibold);
 }
 
+::placeholder {
+  color: var(--cpd-color-text-placeholder) !important;
+}
+
+a {
+  font: var(--cpd-font-weight-medium);
+  color: var(--cpd-color-text-primary) !important;
+}
+
+/** 
+ * Bookstack does not offer a lot of flexibility with the DOM structure
+ * we need to slightly force things to have the bloom bleeding between the nav
+ * and being behind the main content wrapper too 
+ */
+body {
+  pointer-events: none;
+  color: var(--cpd-color-text-primary);
+}
+
+body > * {
+  pointer-events: initial;
+}
+
+body::after {
+  background: url(https://compound.element.io/globe.svg);
+  background-size: contain;
+  content: "";
+  display: block;
+  width: 512px;
+  filter: blur(512px);
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.12;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none !important;
+}
+
+* {
+  outline-color: var(--cpd-color-border-focused);
+  outline-offset: 1px;
+  font: var(--cpd-font-body-md-regular);
+  font-family: "Inter", sans-serif !important;
+  box-shadow: none !important;
+}
+
+.entity-meta-item {
+  font: var(--cpd-font-body-sm-regular) !important;
+}
+
+.content-wrap.card {
+  box-shadow: none;
+  border: 1px solid var(--cpd-color-bg-subtle-primary);
+  border-radius: 24px;
+  padding: var(--cpd-space-10x) var(--cpd-space-13x);
+}
+
+/**
+ * HEADER
+ */
+
+#header {
+  background: var(--cpd-color-bg-canvas-default) !important;
+  border-bottom: 1px solid var(--cpd-color-bg-subtle-primary);
+  box-shadow: none;
+  z-index: -2;
+}
+
+.header-links .svg-icon {
+  display: none;
+}
+
+.header-links a {
+  color: var(--cpd-color-text-primary);
+}
+
 .entity-list-item > span:first-child,
 .icon-list-item > span:first-child,
 .split-icon-list-item > a > .icon,
@@ -138,6 +130,10 @@ header .links a:hover {
   text-decoration: underline;
 }
 
+header {
+  color: var(--cpd-color-text-primary) !important;
+}
+
 .search-box input {
   background: none !important;
   border-radius: 9999px;
@@ -145,16 +141,8 @@ header .links a:hover {
   color: var(--cpd-color-text-primary) !important;
 }
 
-::placeholder {
-  color: var(--cpd-color-text-placeholder) !important;
-}
-
 #header-search-box-button {
   color: var(--cpd-color-icon-primary) !important;
-}
-
-* {
-  box-shadow: none !important;
 }
 
 .logo-image {
@@ -190,22 +178,9 @@ header .links a:hover {
   background-image: url(https://gsouquet.github.io/emsdocs-images/images/logo-dark.png);
 }
 
-body::after {
-  background: url(https://compound.element.io/globe.svg);
-  background-size: contain;
-  content: "";
-  display: block;
-  width: 512px;
-  filter: blur(512px);
-  aspect-ratio: 1 / 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.12;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  pointer-events: none !important;
-}
+/**
+ * CONTENT
+ */
 
 .entity-list-item,
 .icon-list-item {
@@ -249,15 +224,6 @@ body::after {
   background: transparent !important;
 }
 
-header {
-  color: var(--cpd-color-text-primary) !important;
-}
-
-a {
-  font: var(--cpd-font-weight-medium);
-  color: var(--cpd-color-text-primary) !important;
-}
-
 .text-link,
 .text-link:hover,
 .text-link-hover:hover,
@@ -270,10 +236,42 @@ a {
   background: var(--cpd-color-bg-subtle-primary) !important;
 }
 
-body {
-  color: var(--cpd-color-text-primary);
-}
-
 .text-muted {
   color: var(--cpd-color-text-secondary);
+}
+
+/*
+    .content-wrap = the contents of pages
+    .markdown-editor-display = the preview pane when editing a page
+
+    These two ensure the formatting only applies to the page contents,
+    not site navigation and stuff which is styled by Bookstack.
+*/
+
+/* Max size and a border around images */
+.content-wrap img,
+.markdown-editor-display img {
+  max-height: 350px;
+  max-width: 450px;
+  border: 1px solid var(--color-primary);
+}
+
+/* Links */
+.content-wrap a,
+.markdown-editor-display a {
+  color: var(--cpd-color-text-primary);
+  border-radius: 24px;
+}
+
+/* Add a underline when hovering the mouse over a link */
+.content-wrap a:hover,
+.markdown-editor-display a:hover {
+  background: var(--cpd-color-bg-action-secondary-hovered) !important;
+}
+
+/* Collapsible section headers, used for example on the FAQ page */
+.content-wrap details summary,
+.markdown-editor-display details summary {
+  font-size: 15px;
+  font-weight: bolder;
 }
