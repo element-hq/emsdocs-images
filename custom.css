@@ -162,8 +162,28 @@ header .links a:hover {
   font-size: 0;
   height: 36px;
   aspect-ratio: 7.3 / 1;
-  background: url(https://gsouquet.github.io/emsdocs-images/images/logo.png);
+  background-image: url(https://gsouquet.github.io/emsdocs-images/images/logo.png);
   background-size: contain;
+}
+
+@media (prefers-color-scheme: light) {
+  .logo-text {
+    background-image: url(https://gsouquet.github.io/emsdocs-images/images/logo.png);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo-text {
+    background-image: url(https://gsouquet.github.io/emsdocs-images/images/logo-dark.png);
+  }
+}
+
+.light-mode .logo-text {
+  background-image: url(https://gsouquet.github.io/emsdocs-images/images/logo.png);
+}
+
+.dark-mode .logo-text {
+  background-image: url(https://gsouquet.github.io/emsdocs-images/images/logo-dark.png);
 }
 
 body::after {
@@ -218,4 +238,21 @@ body::after {
 .tri-layout-mobile-tab,
 .tri-layout-mobile-tabs {
   background: transparent !important;
+}
+
+header {
+  color: var(--cpd-color-text-primary) !important;
+}
+
+a {
+  font: var(--cpd-font-weight-medium);
+  color: var(--cpd-color-text-primary) !important;
+}
+
+.text-link,
+.text-link:hover,
+.text-link-hover:hover,
+a {
+  color: var(--cpd-color-text-primary) !important;
+  fill: var(--cpd-color-text-primary) !important;
 }
