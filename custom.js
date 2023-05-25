@@ -13,19 +13,10 @@ window.onload = function () {
      */
 
     const root = document.body.parentElement;
-    if (root.className.includes("-mode")) {
-        if (root.classList.contains("dark-mode")) {
-            root.classList.add("cpd-theme-dark")
-        } else if (root.classList.contains("light-mode")) {
-            root.classList.add("cpd-theme-light")
-        }
+
+    if (window.matchMedia('(prefers-color-scheme:dark)').matches || root.classList.contains("dark-mode")) {
+        root.classList.add("cpd-theme-dark")
     } else {
-        if (window.matchMedia('(prefers-color-scheme:light)')) {
-            root.classList.add("cpd-theme-dark");
-        } else {
-            root.classList.add("cpd-theme-light");
-        }
+        root.classList.add("cpd-theme-light")
     }
-
-
 };
