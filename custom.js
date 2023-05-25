@@ -5,4 +5,16 @@ window.onload = function () {
         const details = document.getElementById(bookmark);
         details.open = true;
     }
+
+    /**
+     * Bookstack does not let us override the class used when switching between
+     * modes. We have to listen to that change and apply the class that compound
+     * needs to invert the color scales
+     */
+    const root = document.body.parentElement;
+    if (root.classList.contains("dark-mode")) {
+        root.classList.add("cpd-theme-dark")
+    } else if (root.classList.contains("light-mode")) {
+        root.classList.add("cpd-theme-light")
+    }
 };

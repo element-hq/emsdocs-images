@@ -177,7 +177,7 @@ body::after {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.25;
+  opacity: 0.12;
   transform: translate(-50%, -50%);
   z-index: -1;
   pointer-events: none !important;
@@ -213,4 +213,9 @@ body::after {
 .activity-list-item a {
   text-decoration: underline;
   font-weight: var(--cpd-font-weight-medium);
+}
+
+.tri-layout-mobile-tab,
+.tri-layout-mobile-tabs {
+  background: transparent !important;
 }
