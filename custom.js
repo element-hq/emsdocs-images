@@ -13,7 +13,7 @@ window.onload = function () {
      */
 
     const root = document.body.parentElement;
-    if (root.className.contains("-mode")) {
+    if (root.className.includes("-mode")) {
         if (root.classList.contains("dark-mode")) {
             root.classList.add("cpd-theme-dark")
         } else if (root.classList.contains("light-mode")) {
