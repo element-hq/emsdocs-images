@@ -18,8 +18,7 @@
 .content-wrap a,
 .markdown-editor-display a {
   color: var(--cpd-color-text-primary);
-  text-decoration: underline;
-  border-radius: 9999px;
+  border-radius: 24px;
 }
 
 /* Add a underline when hovering the mouse over a link */
@@ -55,6 +54,10 @@ body {
   outline-offset: 1px;
   font: var(--cpd-font-body-md-regular);
   font-family: "Inter", sans-serif !important;
+}
+
+.entity-meta-item {
+  font: var(--cpd-font-body-sm-regular) !important;
 }
 
 .content-wrap.card {
@@ -164,6 +167,7 @@ header .links a:hover {
   aspect-ratio: 7.3 / 1;
   background-image: url(https://gsouquet.github.io/emsdocs-images/images/logo.png);
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 @media (prefers-color-scheme: light) {
@@ -209,6 +213,11 @@ body::after {
   padding: var(--cpd-space-1x) var(--cpd-space-2x);
   box-sizing: border-box;
   max-width: 100%;
+}
+
+.icon-list hr {
+  margin: var(--cpd-space-2x);
+  background: var(--cpd-color-text-primary) !important;
 }
 
 .entity-list,
