@@ -265,3 +265,15 @@ a {
   color: var(--cpd-color-text-primary) !important;
   fill: var(--cpd-color-text-primary) !important;
 }
+
+.card {
+  background: var(--cpd-color-bg-subtle-primary) !important;
+}
+
+body {
+  color: var(--cpd-color-text-primary);
+}
+
+.text-muted {
+  color: var(--cpd-color-text-secondary);
+}
